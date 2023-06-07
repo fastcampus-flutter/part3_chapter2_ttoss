@@ -3,8 +3,6 @@ import 'package:fast_app_base/common/theme/custom_theme_app.dart';
 import 'package:fast_app_base/screen/main/s_main.dart';
 import 'package:flutter/material.dart';
 
-import 'screen/splash/s_splash.dart';
-
 class App extends StatefulWidget {
   static final GlobalKey<NavigatorState> navigatorKey = GlobalKey();
   static bool isForeground = true;
@@ -36,13 +34,14 @@ class AppState extends State<App> with Nav, WidgetsBindingObserver {
     return CustomThemeApp(
       child: Builder(builder: (context) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           navigatorKey: App.navigatorKey,
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           title: 'Image Finder',
           theme: context.themeType.themeData,
-          home: const SplashScreen(),
+          home: const MainScreen(),
         );
       }),
     );
