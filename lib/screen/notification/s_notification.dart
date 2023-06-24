@@ -19,18 +19,19 @@ class _NotificationScreenState extends State<NotificationScreen> {
         slivers: [
           const SliverAppBar(
             title: Text("알림"),
+            pinned: true,
           ),
           SliverList(
-              delegate: SliverChildBuilderDelegate(
-            (context, index) => NotificationItemWidget(
-              notification: notificationDummies[index],
-              onTap: () {
-                NotificationDialog([notificationDummies[0], notificationDummies[1]]).show();
-
-              },
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => NotificationItemWidget(
+                notification: notificationDummies[index],
+                onTap: () {
+                  NotificationDialog([notificationDummies[0], notificationDummies[1]]).show();
+                },
+              ),
+              childCount: notificationDummies.length,
             ),
-            childCount: notificationDummies.length,
-          )),
+          )
         ],
       ),
     );
