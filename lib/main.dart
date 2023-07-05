@@ -4,8 +4,9 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 
 import 'app.dart';
-import 'common/data/app_preferences.dart';
 import 'package:timeago/timeago.dart' as timeago;
+
+import 'common/data/preference/app_preferences.dart';
 
 void main() async {
   final bindings = WidgetsFlutterBinding.ensureInitialized();

@@ -2,6 +2,11 @@ import 'package:fast_app_base/common/theme/custom_theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'item/preference_item.dart';
+
+export 'package:get/get_rx/get_rx.dart';
+export 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+
 class AppPreferences {
   static const String prefix = 'AppPreference.';
 
@@ -29,6 +34,8 @@ class AppPreferences {
         return _prefs.setBool(key, value as bool);
       case const (List<String>):
         return _prefs.setStringList(key, value as List<String>);
+      case DateTime:
+        return _prefs.setString(key, (value as DateTime).toIso8601String());
       default:
         if (value is Enum) {
           return _prefs.setString(key, describeEnum(value));
@@ -43,7 +50,7 @@ class AppPreferences {
     return _prefs.remove(key);
   }
 
-  static T? getValue<T>(PreferenceItem<T> item) {
+  static T getValue<T>(PreferenceItem<T> item) {
     final String key = getPrefKey(item);
     switch (T) {
       case int:
@@ -69,27 +76,10 @@ class AppPreferences {
     switch (t) {
       case CustomTheme:
         return CustomTheme.values.asNameMap()[value] as T?;
+      case DateTime:
+        return DateTime.parse(value) as T?;
       default:
         throw Exception('$t 타입에 대한 transform 함수를 추가 해주세요.');
     }
-  }
-}
-
-class PreferenceItem<T> {
-  final T? defaultValue;
-  final String key;
-
-  PreferenceItem(this.key, [this.defaultValue]);
-
-  void call(T? value) {
-    AppPreferences.setValue<T>(this, value);
-  }
-
-  void set(T? value) {
-    AppPreferences.setValue<T>(this, value);
-  }
-
-  T? get() {
-    return AppPreferences.getValue<T>(this);
   }
 }
