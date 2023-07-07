@@ -41,6 +41,7 @@ class RxnPreferenceItem<T, R extends Rxn<T>> extends NullablePreferenceItem<T> {
 
   @override
   Future<bool> delete() {
+    _rxnValue.value = null;
     return AppPreferences.deleteValue<T?>(this);
   }
 

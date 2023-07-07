@@ -21,6 +21,6 @@ class SwitchMenu extends StatelessWidget {
           onChanged: onChanged,
         )
       ],
-    );
+    ).pSymmetric(h:20);
   }
 }

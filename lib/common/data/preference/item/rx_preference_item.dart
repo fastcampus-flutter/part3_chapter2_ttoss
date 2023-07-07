@@ -42,6 +42,7 @@ class RxPreferenceItem<T, R extends Rx<T>> extends PreferenceItem<T> {
 
   @override
   Future<bool> delete() {
+    _rxValue.value = defaultValue;
     return AppPreferences.deleteValue<T>(this);
   }
 
