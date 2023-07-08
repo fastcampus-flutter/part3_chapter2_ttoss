@@ -6,6 +6,7 @@ import '../../../notification/s_notification.dart';
 
 class TtossAppBar extends StatefulWidget {
   static const double appBarHeight = 60;
+
   const TtossAppBar({super.key});
 
   @override
@@ -34,7 +35,7 @@ class _TtossAppBarState extends State<TtossAppBar> {
           ),
           width10,
           Tap(
-            onTap: (){
+            onTap: () {
               //알림 화면
               Nav.push(const NotificationScreen());
             },
