@@ -30,6 +30,7 @@ class MainScreenState extends State<MainScreen>
 
   GlobalKey<NavigatorState> get _currentTabNavigationKey => navigatorKeys[_currentIndex];
 
+  ///bottomNavigationBar 아래 영역 까지 그림
   bool get extendBody => true;
 
   static double get bottomNavigationBarBorderRadius => 30.0;
@@ -52,7 +53,7 @@ class MainScreenState extends State<MainScreen>
     return WillPopScope(
       onWillPop: _handleBackPressed,
       child: Scaffold(
-        extendBody: extendBody, //bottomNavigationBar 아래 영역 까지 그림
+        extendBody: extendBody,
         drawer: const MenuDrawer(),
         body: Padding(
           padding: EdgeInsets.only(bottom: extendBody ? 60 - bottomNavigationBarBorderRadius : 0),

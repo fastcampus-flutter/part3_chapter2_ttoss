@@ -22,6 +22,7 @@ class _StockFragmentState extends State<StockFragment> with SingleTickerProvider
     return CustomScrollView(
       slivers: [
         SliverAppBar(
+          backgroundColor: context.appColors.roundedLayoutBackground,
           pinned: true,
           actions: [
             ImageButton(
@@ -72,7 +73,9 @@ class _StockFragmentState extends State<StockFragment> with SingleTickerProvider
         children: [
           TabBar(
             onTap: (index) {
-              currentIndex = index;
+              setState(() {
+                currentIndex = index;
+              });
             },
             labelStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             labelPadding: const EdgeInsets.symmetric(vertical: 20),

@@ -29,7 +29,8 @@ class HomeFragment extends StatelessWidget {
             },
             child: SingleChildScrollView(
               padding: const EdgeInsets.only(
-                  top: TtossAppBar.appBarHeight, bottom: MainScreenState.bottomNavigatorHeight),
+                  top: TtossAppBar.appBarHeight + 10,
+                  bottom: MainScreenState.bottomNavigatorHeight),
               child: Column(
                 children: [
                   BigButton(
