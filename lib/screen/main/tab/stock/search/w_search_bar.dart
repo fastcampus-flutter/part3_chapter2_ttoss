@@ -34,7 +34,7 @@ class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
                 controller: controller,
                 texthint: "'게임'을 검색해보세요",
                 onEditingComplete: () {
-                  print(controller.text);
+                  //print(controller.text);
                   //검색 버튼 눌렀을때 처리 //search
                 },
               ).pOnly(top: 5),

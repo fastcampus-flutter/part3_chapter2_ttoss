@@ -1,9 +1,9 @@
 class SimpleStock {
-  final String stockName;
+  final String name;
 
-  SimpleStock({required this.stockName});
+  SimpleStock(this.name);
 
   factory SimpleStock.fromJson(dynamic json) {
-    return SimpleStock(stockName: json['name']);
+    return SimpleStock(json['name']);
   }
 }

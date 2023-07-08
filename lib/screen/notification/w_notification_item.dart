@@ -1,5 +1,4 @@
 import 'package:fast_app_base/common/common.dart';
-import 'package:fast_app_base/common/widget/w_empty_expanded.dart';
 import 'package:flutter/material.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -8,7 +7,6 @@ import './vo/vo_notification.dart';
 class NotificationItemWidget extends StatefulWidget {
   final TtossNotification notification;
   final VoidCallback onTap;
-
 
   const NotificationItemWidget({required this.onTap, super.key, required this.notification});
 

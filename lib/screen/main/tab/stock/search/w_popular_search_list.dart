@@ -28,7 +28,7 @@ class _PopularSearchListState extends State<PopularSearchList> {
                   children: [
                     (index + 1).text.bold.white.size(16).make(),
                     width20,
-                    e.stockName.text.bold.white.size(16).make(),
+                    e.name.text.bold.white.size(16).make(),
                     emptyExpanded,
                     e.todayPercentageString.text
                         .color(e.getTodayPercentageColor(context))

@@ -14,7 +14,7 @@ class StockSearchData extends GetxController {
   void onInit() {
     searchHistoryList.addAll(['삼성전자', 'LG전자', '현대차', '넷플릭스']);
     () async {
-      stocks.addAll(await LocalJson.getObjectList("stock_list.json"));
+      stocks.addAll(await LocalJson.getObjectList("json/stock_list.json"));
     }();
     super.onInit();
   }
@@ -24,7 +24,7 @@ class StockSearchData extends GetxController {
       searchResult.clear();
       return;
     }
-    searchResult.value = stocks.where((element) => element.stockName.contains(text)).toList();
+    searchResult.value = stocks.where((element) => element.name.contains(text)).toList();
   }
 
   void addSearchHistory(String stockName) {

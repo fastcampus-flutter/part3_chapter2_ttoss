@@ -54,13 +54,13 @@ class _StockSearchScreenState extends State<StockSearchScreen> {
                   final element = searchData.searchResult[index];
                   return Tap(
                     onTap: () {
-                      Nav.push(StockDetail(stockName: element.stockName));
-                      searchData.addSearchHistory(element.stockName);
+                      Nav.push(StockDetail(stockName: element.name));
+                      searchData.addSearchHistory(element.name);
                       _controller.clear();
                     },
                     child: Container(
                       padding: const EdgeInsets.all(20),
-                      child: element.stockName.text.make(),
+                      child: element.name.text.make(),
                     ),
                   );
                 },

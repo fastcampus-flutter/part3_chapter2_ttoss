@@ -1,6 +1,5 @@
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/common/widget/w_arrow.dart';
-import 'package:fast_app_base/common/widget/w_empty_expanded.dart';
 import 'package:flutter/material.dart';
 
 class LongButton extends StatelessWidget {

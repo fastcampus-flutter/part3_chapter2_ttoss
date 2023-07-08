@@ -1,17 +1,12 @@
-import 'stock_percentage_data_provider.dart';
-import 'vo_simple_stock.dart';
+import 'package:fast_app_base/screen/main/tab/stock/vo/vo_popular_stock.dart';
 
-class Stock extends SimpleStock with StockPercentageDataProvider {
-  @override
-  final int yesterdayClosePrice;
-  @override
-  final int currentPrice;
+class Stock extends PopularStock {
   final String stockImagePath;
 
   Stock({
-    required super.stockName,
-    required this.yesterdayClosePrice,
-    required this.currentPrice,
+    required super.name,
+    required super.yesterdayClosePrice,
+    required super.currentPrice,
     required this.stockImagePath,
   });
 }
