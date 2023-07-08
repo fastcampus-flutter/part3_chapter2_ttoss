@@ -17,7 +17,7 @@ class CustomThemeApp extends StatefulWidget {
 class _CustomThemeAppState extends State<CustomThemeApp> {
   late CustomTheme theme = savedTheme ?? defaultTheme ?? systemTheme;
   final CustomTheme? defaultTheme =
-      CustomTheme.light; //light, dark 테마가 준비되었고, 시스템 테마를 따라가게 하려면 해당 필드를 제거 하시면 됩니다.
+      CustomTheme.dark; //light, dark 테마가 준비되었고, 시스템 테마를 따라가게 하려면 해당 필드를 제거 하시면 됩니다.
 
   void handleChangeTheme(CustomTheme theme) {
     setState(() => this.theme = theme);
