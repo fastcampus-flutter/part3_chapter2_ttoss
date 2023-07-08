@@ -12,13 +12,6 @@ class AppPreferences {
 
   static late final SharedPreferences _prefs;
 
-  static Type getType<T>() => T;
-  static Type nullableDateTimeType = getType<DateTime?>();
-  static const nullableIntType = getType<int?>;
-  static const nullableDoubleType = getType<double?>;
-  static const nullableBoolType = getType<bool?>;
-  static const nullableStringType = getType<String?>;
-
   static String getPrefKey(PreferenceItem item) {
     return '${AppPreferences.prefix}${item.key}';
   }
@@ -33,6 +26,11 @@ class AppPreferences {
   static Future<bool> setValue<T>(PreferenceItem<T> item, T? value) async {
     final String key = getPrefKey(item);
     final isNullable = checkIsNullable<T>();
+
+    if (isNullable && value == null) {
+      //null을 세팅한다는 것은 값을 지운다는 의미로 해석. 필요에 따라 변경해서 쓰시면 되요.
+      return _prefs.remove(item.key);
+    }
 
     if (isNullable) {
       switch (T.toString()) {
