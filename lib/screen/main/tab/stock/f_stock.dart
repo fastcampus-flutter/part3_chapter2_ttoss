@@ -1,5 +1,7 @@
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/common/widget/w_image_button.dart';
+import 'package:fast_app_base/screen/main/tab/stock/tab/f_my_stock.dart';
+import 'package:fast_app_base/screen/main/tab/stock/tab/f_todays_discovery.dart';
 import 'package:flutter/material.dart';
 
 import 'setting/s_setting.dart';
@@ -11,7 +13,10 @@ class StockFragment extends StatefulWidget {
   State<StockFragment> createState() => _StockFragmentState();
 }
 
-class _StockFragmentState extends State<StockFragment> {
+class _StockFragmentState extends State<StockFragment> with SingleTickerProviderStateMixin {
+  late final _tabController = TabController(length: 2, vsync: this);
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -34,7 +39,7 @@ class _StockFragmentState extends State<StockFragment> {
             ImageButton(
               imagePath: '$basePath/icon/stock_settings.png',
               onTap: () {
-                Nav.push(SettingScreen());
+                Nav.push(const SettingScreen());
               },
             ),
           ],
@@ -44,9 +49,7 @@ class _StockFragmentState extends State<StockFragment> {
             children: [
               title,
               tabBar,
-              myAccount,
-              height20,
-              myStocks,
+              if (currentIndex == 0) const MyStockFragment() else const TodaysDiscoveryFragment(),
             ],
           ),
         ),
@@ -61,13 +64,27 @@ class _StockFragmentState extends State<StockFragment> {
           width20,
           'S&P 500'.text.size(13).bold.color(context.appColors.lessImportant).make(),
           width10,
-          3919.29.toString().text.size(13).bold.color(context.appColors.plus).make(),
+          3919.29.toComma().text.size(13).bold.color(context.appColors.plus).make(),
         ],
       ).pOnly(left: 20);
 
-  Widget get tabBar => Placeholder();
-
-  Widget get myAccount => Placeholder();
-
-  Widget get myStocks => Placeholder();
+  Widget get tabBar => Column(
+        children: [
+          TabBar(
+            onTap: (index) {
+              currentIndex = index;
+            },
+            labelStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            labelPadding: const EdgeInsets.symmetric(vertical: 20),
+            indicatorColor: Colors.white,
+            indicatorPadding: const EdgeInsets.symmetric(horizontal: 20),
+            controller: _tabController,
+            tabs: [
+              '내 주식'.text.make(),
+              '오늘의 발견'.text.make(),
+            ],
+          ),
+          const Line(),
+        ],
+      );
 }

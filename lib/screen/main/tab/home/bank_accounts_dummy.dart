@@ -20,7 +20,7 @@ main() {
   //   print(entry.key + ":" + (entry.value.accountTypeName ?? entry.value.bank.name));
   // }
   //
-  print(bankSet.length);
+  //print(bankSet.length);
 }
 
 //List
@@ -42,10 +42,6 @@ final bankAccounts = [
 final bankMap = {
   "shinhan1": bankAccountShinhan1,
   "shinhan2": bankAccountShinhan2,
-  "shinhan2": bankAccountShinhan2,
-  "shinhan2": bankAccountShinhan2,
-  "shinhan2": bankAccountShinhan2,
-  "shinhan2": bankAccountShinhan2
 };
 
 //Set

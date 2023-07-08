@@ -36,7 +36,7 @@ class _TtossAppBarState extends State<TtossAppBar> {
           Tap(
             onTap: (){
               //알림 화면
-              Nav.push(NotificationScreen());
+              Nav.push(const NotificationScreen());
             },
             child: Stack(
               children: [
