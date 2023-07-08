@@ -1,6 +1,7 @@
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/common/dart/extension/datetime_extension.dart';
 import 'package:fast_app_base/screen/main/tab/stock/setting/w_switch_menu.dart';
+import 'package:fast_app_base/screen/opensource/s_opensource.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
@@ -63,6 +64,7 @@ class _SettingScreenState extends State<SettingScreen> {
           BigButton(
             '오픈소스 화면',
             onTap: () async {
+              Nav.push(OpensourceScreen());
             },
           )
         ],
