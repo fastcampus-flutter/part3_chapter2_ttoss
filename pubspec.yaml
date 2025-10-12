@@ -40,20 +40,18 @@ dependencies:
   equatable: ^2.0.5
 
   #util
-  velocity_x: ^4.1.0
+  velocity_x: ^4.3.1
 
   #data
   shared_preferences: ^2.0.15
-  isar: 3.1.0
-  isar_flutter_libs: 3.1.0
 
   #architecture
   event_bus: ^2.0.0
-  get: ^4.6.5
+  get: ^4.7.2
 
   #ui - resource
   eva_icons_flutter: ^3.1.0
-  google_fonts: ^4.0.4
+  google_fonts: ^6.3.2
   easy_localization: ^3.0.2
   flutter_cache_manager: ^3.3.0
 
@@ -65,15 +63,24 @@ dependencies:
   cached_network_image: ^3.2.3
 
   #ui - util
-  keyboard_utils_fork: ^0.0.4
+  keyboard_utils_fork:
+    git:
+      url: https://github.com/BansookNam/keyboard_utils
+      ref: 52eed366b8a5c36206b7c78de92e8f528f40d00c
 
   #network
   dio: ^5.0.0
-  retrofit: ^4.0.1
+  retrofit: ^4.4.2
   freezed: ^2.3.4
   freezed_annotation: ^2.2.0
   json_annotation: ^4.8.0
-  timeago: ^3.4.0
+  timeago: ^3.7.1
+
+dependency_overrides:
+  win32: ^5.5.0
+  path_provider_android: ^2.2.0
+  shared_preferences_android: ^2.3.0
+  sqflite: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -85,14 +92,12 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  retrofit_generator: '5.0.0'
-  build_runner: '2.3.3'
+  retrofit_generator: ^9.1.9
+  build_runner: ^2.4.4
   json_serializable: ^6.6.1
-  isar_generator: 3.1.0
   mock_web_server: ^5.0.0-nullsafety.1
   flutter_oss_licenses: ^2.0.1
   test: ^1.22.0
-  change_app_package_name: ^1.1.0
 
 
 
