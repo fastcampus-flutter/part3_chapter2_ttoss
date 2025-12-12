@@ -2,7 +2,7 @@ PODS:
   - Flutter (1.0.0)
   - flutter_native_splash (0.0.1):
     - Flutter
-  - keyboard_utils_fork (0.0.1):
+  - keyboard_utils_plugin (0.0.1):
     - Flutter
   - path_provider_foundation (0.0.1):
     - Flutter
@@ -17,7 +17,7 @@ PODS:
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
-  - keyboard_utils_fork (from `.symlinks/plugins/keyboard_utils_fork/ios`)
+  - keyboard_utils_plugin (from `.symlinks/plugins/keyboard_utils_plugin/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - sqflite_darwin (from `.symlinks/plugins/sqflite_darwin/darwin`)
@@ -27,8 +27,8 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_native_splash:
     :path: ".symlinks/plugins/flutter_native_splash/ios"
-  keyboard_utils_fork:
-    :path: ".symlinks/plugins/keyboard_utils_fork/ios"
+  keyboard_utils_plugin:
+    :path: ".symlinks/plugins/keyboard_utils_plugin/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/darwin"
   shared_preferences_foundation:
@@ -39,7 +39,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   flutter_native_splash: 9e672d3818957718ee006a491730c09deeecace9
-  keyboard_utils_fork: 7c7a5c1563c76d9f5d0ed8758a932683f42304af
+  keyboard_utils_plugin: 5d6c7e09a5b219ccd5ca1e044599fc00c153acc6
   path_provider_foundation: 0f28622a447f952060798e710afcae6800d1dfa0
   shared_preferences_foundation: 84ce365ee5ce19a94de8ece53db7142d35141a5b
   sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
